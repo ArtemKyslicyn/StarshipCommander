@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6AFBC68819CF33C300D42578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC68719CF33C300D42578 /* main.m */; };
+		6AFBC68B19CF33C300D42578 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC68A19CF33C300D42578 /* AppDelegate.m */; };
+		6AFBC69219CF33C300D42578 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC69119CF33C300D42578 /* GameViewController.m */; };
+		6AFBC69519CF33C300D42578 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFBC69319CF33C300D42578 /* Main.storyboard */; };
+		6AFBC69719CF33C300D42578 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFBC69619CF33C300D42578 /* Images.xcassets */; };
+		6AFBC69A19CF33C300D42578 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AFBC69819CF33C300D42578 /* LaunchScreen.xib */; };
+		6AFBC6A619CF33C300D42578 /* StarshipCommanderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC6A519CF33C300D42578 /* StarshipCommanderTests.m */; };
+		6AFBC6B619CF370200D42578 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC6B519CF370200D42578 /* GameManager.m */; };
+		6AFBC6BA19CF372700D42578 /* GameSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC6B919CF372700D42578 /* GameSprite.m */; };
+		6AFBC6BD19CF37AA00D42578 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC6BC19CF37AA00D42578 /* Helper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AFBC6A019CF33C300D42578 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AFBC67A19CF33C300D42578 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AFBC68119CF33C300D42578;
+			remoteInfo = StarshipCommander;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6AFBC68219CF33C300D42578 /* StarshipCommander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarshipCommander.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AFBC68619CF33C300D42578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AFBC68719CF33C300D42578 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6AFBC68919CF33C300D42578 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6AFBC68A19CF33C300D42578 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6AFBC69019CF33C300D42578 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		6AFBC69119CF33C300D42578 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		6AFBC69419CF33C300D42578 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AFBC69619CF33C300D42578 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6AFBC69919CF33C300D42578 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6AFBC69F19CF33C300D42578 /* StarshipCommanderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarshipCommanderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AFBC6A419CF33C300D42578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AFBC6A519CF33C300D42578 /* StarshipCommanderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarshipCommanderTests.m; sourceTree = "<group>"; };
+		6AFBC6B419CF370200D42578 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = BuisnessLayer/GameManager/GameManager.h; sourceTree = "<group>"; };
+		6AFBC6B519CF370200D42578 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameManager.m; path = BuisnessLayer/GameManager/GameManager.m; sourceTree = "<group>"; };
+		6AFBC6B819CF372700D42578 /* GameSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameSprite.h; path = BuisnessLayer/GameObjects/GameSprite.h; sourceTree = "<group>"; };
+		6AFBC6B919CF372700D42578 /* GameSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameSprite.m; path = BuisnessLayer/GameObjects/GameSprite.m; sourceTree = "<group>"; };
+		6AFBC6BB19CF37AA00D42578 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = BuisnessLayer/Helper.h; sourceTree = "<group>"; };
+		6AFBC6BC19CF37AA00D42578 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = BuisnessLayer/Helper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AFBC67F19CF33C300D42578 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AFBC69C19CF33C300D42578 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AFBC67919CF33C300D42578 = {
+			isa = PBXGroup;
+			children = (
+				6AFBC68419CF33C300D42578 /* StarshipCommander */,
+				6AFBC6A219CF33C300D42578 /* StarshipCommanderTests */,
+				6AFBC68319CF33C300D42578 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6AFBC68319CF33C300D42578 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC68219CF33C300D42578 /* StarshipCommander.app */,
+				6AFBC69F19CF33C300D42578 /* StarshipCommanderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AFBC68419CF33C300D42578 /* StarshipCommander */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC6B319CF359500D42578 /* BuisnessLayer */,
+				6AFBC68919CF33C300D42578 /* AppDelegate.h */,
+				6AFBC68A19CF33C300D42578 /* AppDelegate.m */,
+				6AFBC69019CF33C300D42578 /* GameViewController.h */,
+				6AFBC69119CF33C300D42578 /* GameViewController.m */,
+				6AFBC69319CF33C300D42578 /* Main.storyboard */,
+				6AFBC69619CF33C300D42578 /* Images.xcassets */,
+				6AFBC69819CF33C300D42578 /* LaunchScreen.xib */,
+				6AFBC68519CF33C300D42578 /* Supporting Files */,
+			);
+			path = StarshipCommander;
+			sourceTree = "<group>";
+		};
+		6AFBC68519CF33C300D42578 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC68619CF33C300D42578 /* Info.plist */,
+				6AFBC68719CF33C300D42578 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6AFBC6A219CF33C300D42578 /* StarshipCommanderTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC6A519CF33C300D42578 /* StarshipCommanderTests.m */,
+				6AFBC6A319CF33C300D42578 /* Supporting Files */,
+			);
+			path = StarshipCommanderTests;
+			sourceTree = "<group>";
+		};
+		6AFBC6A319CF33C300D42578 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC6A419CF33C300D42578 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6AFBC6AF19CF342800D42578 /* GameManager */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC6B419CF370200D42578 /* GameManager.h */,
+				6AFBC6B519CF370200D42578 /* GameManager.m */,
+			);
+			name = GameManager;
+			sourceTree = "<group>";
+		};
+		6AFBC6B319CF359500D42578 /* BuisnessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC6BB19CF37AA00D42578 /* Helper.h */,
+				6AFBC6BC19CF37AA00D42578 /* Helper.m */,
+				6AFBC6B719CF370700D42578 /* GameObjects */,
+				6AFBC6AF19CF342800D42578 /* GameManager */,
+			);
+			name = BuisnessLayer;
+			sourceTree = "<group>";
+		};
+		6AFBC6B719CF370700D42578 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				6AFBC6B819CF372700D42578 /* GameSprite.h */,
+				6AFBC6B919CF372700D42578 /* GameSprite.m */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AFBC68119CF33C300D42578 /* StarshipCommander */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AFBC6A919CF33C300D42578 /* Build configuration list for PBXNativeTarget "StarshipCommander" */;
+			buildPhases = (
+				6AFBC67E19CF33C300D42578 /* Sources */,
+				6AFBC67F19CF33C300D42578 /* Frameworks */,
+				6AFBC68019CF33C300D42578 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarshipCommander;
+			productName = StarshipCommander;
+			productReference = 6AFBC68219CF33C300D42578 /* StarshipCommander.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AFBC69E19CF33C300D42578 /* StarshipCommanderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AFBC6AC19CF33C300D42578 /* Build configuration list for PBXNativeTarget "StarshipCommanderTests" */;
+			buildPhases = (
+				6AFBC69B19CF33C300D42578 /* Sources */,
+				6AFBC69C19CF33C300D42578 /* Frameworks */,
+				6AFBC69D19CF33C300D42578 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AFBC6A119CF33C300D42578 /* PBXTargetDependency */,
+			);
+			name = StarshipCommanderTests;
+			productName = StarshipCommanderTests;
+			productReference = 6AFBC69F19CF33C300D42578 /* StarshipCommanderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AFBC67A19CF33C300D42578 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Ramotion;
+				TargetAttributes = {
+					6AFBC68119CF33C300D42578 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					6AFBC69E19CF33C300D42578 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 6AFBC68119CF33C300D42578;
+					};
+				};
+			};
+			buildConfigurationList = 6AFBC67D19CF33C300D42578 /* Build configuration list for PBXProject "StarshipCommander" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AFBC67919CF33C300D42578;
+			productRefGroup = 6AFBC68319CF33C300D42578 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AFBC68119CF33C300D42578 /* StarshipCommander */,
+				6AFBC69E19CF33C300D42578 /* StarshipCommanderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AFBC68019CF33C300D42578 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AFBC69A19CF33C300D42578 /* LaunchScreen.xib in Resources */,
+				6AFBC69519CF33C300D42578 /* Main.storyboard in Resources */,
+				6AFBC69719CF33C300D42578 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AFBC69D19CF33C300D42578 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AFBC67E19CF33C300D42578 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AFBC68B19CF33C300D42578 /* AppDelegate.m in Sources */,
+				6AFBC6BD19CF37AA00D42578 /* Helper.m in Sources */,
+				6AFBC6BA19CF372700D42578 /* GameSprite.m in Sources */,
+				6AFBC6B619CF370200D42578 /* GameManager.m in Sources */,
+				6AFBC69219CF33C300D42578 /* GameViewController.m in Sources */,
+				6AFBC68819CF33C300D42578 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AFBC69B19CF33C300D42578 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AFBC6A619CF33C300D42578 /* StarshipCommanderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AFBC6A119CF33C300D42578 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AFBC68119CF33C300D42578 /* StarshipCommander */;
+			targetProxy = 6AFBC6A019CF33C300D42578 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6AFBC69319CF33C300D42578 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AFBC69419CF33C300D42578 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6AFBC69819CF33C300D42578 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AFBC69919CF33C300D42578 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AFBC6A719CF33C300D42578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6AFBC6A819CF33C300D42578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AFBC6AA19CF33C300D42578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarshipCommander/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6AFBC6AB19CF33C300D42578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarshipCommander/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6AFBC6AD19CF33C300D42578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StarshipCommanderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarshipCommander.app/StarshipCommander";
+			};
+			name = Debug;
+		};
+		6AFBC6AE19CF33C300D42578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StarshipCommanderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarshipCommander.app/StarshipCommander";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AFBC67D19CF33C300D42578 /* Build configuration list for PBXProject "StarshipCommander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AFBC6A719CF33C300D42578 /* Debug */,
+				6AFBC6A819CF33C300D42578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AFBC6A919CF33C300D42578 /* Build configuration list for PBXNativeTarget "StarshipCommander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AFBC6AA19CF33C300D42578 /* Debug */,
+				6AFBC6AB19CF33C300D42578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6AFBC6AC19CF33C300D42578 /* Build configuration list for PBXNativeTarget "StarshipCommanderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AFBC6AD19CF33C300D42578 /* Debug */,
+				6AFBC6AE19CF33C300D42578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AFBC67A19CF33C300D42578 /* Project object */;
+}
