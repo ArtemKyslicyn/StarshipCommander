@@ -8,6 +8,38 @@
 
 #import "GameManager.h"
 #import  "Helper.h"
+
+static  NSString * const spaceShipImage = @"Rocket";
+static  NSString * const backGroundImage = @"Space";
+static  NSString * const gameOverImage = @"Game_Over";
+static  NSString * const asteroidImage = @"AsteroidTop";
+static  NSString * const smallAsteroidImage = @"ASTEROID";
+static  NSString * const rocketImage = @"fire-roket";
+
+#define GAME_OVER_POSITION GLKVector2Make(160, 235)
+#define STARSHIP_POSITION GLKVector2Make(160, 35)
+
+const float kStartOffsetAsteroids = 50.0f;
+const float kOffsetAsteroids = 15.0f;
+
+const int kCountAsteroids = 6;
+const int kRowsAsteroids = 2;
+
+
+const float kYDistanceBetweenAsteroids = 72.f;
+const float kXDistanceBetweenAsteroids = 60.0f;
+const float kDefaultScreenHeight =  680.f;  // i know it's not got I fix it later
+
+const float kAsteroidSpeed = -90.f;
+const float kSmallAsteroidSpeed = -90.f;
+const float kLaunchRocketSpeed = 950.f;
+const float kSmallAsteroidAngle = 15.f;
+const float kBigAsteroidRotationSpeed =180.f;
+const float kBigAsteroidAfterCrashRotationSpeed =360.f;
+const float kSmallAsteroidRotationSpeed =780.f;
+
+const float rocketLaunchYPositon = 80;
+
 @interface GameManager()
 @property (strong, nonatomic) GLKBaseEffect *effect;
 @end
@@ -20,6 +52,9 @@
     
     if (self) {
         _effect = effect;
+        self.background = [[GameSprite alloc] initWithImage:[UIImage imageNamed:backGroundImage] effect:self.effect];
+        self.gameOver =  [[GameSprite alloc] initWithImage:[UIImage imageNamed:gameOverImage] effect:self.effect];
+        self.gameOver.position = GAME_OVER_POSITION;
     }
     
     return self;
@@ -30,8 +65,8 @@
     
     if (!_starShip) {
         
-        _starShip = [[GameSprite alloc] initWithImage:[UIImage imageNamed:@"Rocket"] effect:self.effect];
-        _starShip.position = GLKVector2Make(160, 35);
+        _starShip = [[GameSprite alloc] initWithImage:[UIImage imageNamed:spaceShipImage] effect:self.effect];
+        _starShip.position = STARSHIP_POSITION;
         
     }
     
@@ -48,8 +83,6 @@
     self.isGameRunning = YES;
     self.gameState = GameStateNone;
     
-    self.background = [[GameSprite alloc] initWithImage:[UIImage imageNamed:@"Space"] effect:self.effect];
-    //self.background.position = GLKVector2Make(160, 240);
 
 }
 
@@ -57,10 +90,10 @@
     
     
     for (GameSprite *asteroid in self.asteroids) {
-        if (asteroid.boundingRect.origin.y <= bounds.origin.y-50){
+        if (asteroid.boundingRect.origin.y <= bounds.origin.y-kStartOffsetAsteroids){
            
             float randomY = [Helper getYesOrNo]?[Helper randomInt]: -[Helper randomInt];
-            float y = 680.f  - 15.f+ randomY;
+            float y = bounds.size.height  - kOffsetAsteroids+ randomY;
             asteroid.position = GLKVector2Make(asteroid.position.x, y);
 
         }
@@ -85,7 +118,6 @@
     }
     
     [self.fireRockets removeObjectsInArray:smallAsteroidsToRemove];
-    ///[self.smallAsteroids removeAllObjects];
     
     
 }
@@ -164,24 +196,24 @@
     
     NSMutableArray *loadedAsteroids = [NSMutableArray array];
     
-    UIImage *brickImage = [UIImage imageNamed:@"AsteroidTop"];
+    UIImage *brickImage = [UIImage imageNamed:asteroidImage];
     
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], GLKTextureLoaderOriginBottomLeft, nil];
     GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:brickImage.CGImage options:options error:&error];
     
-    for (int i = 0; i < 2; i++){
+    for (int i = 0; i < kRowsAsteroids; i++){
         
-        for (int j = 0; j < 6; j++)
+        for (int j = 0; j < kCountAsteroids; j++)
         {
             GameSprite *brickSprite = [[GameSprite alloc] initWithTexture:textureInfo effect:self.effect];
             float randomX = [Helper getYesOrNo]?[Helper randomInt]: -[Helper randomInt];
             float randomY = [Helper getYesOrNo]?[Helper randomInt]: -[Helper randomInt];
-            float x = (j + 1) * 72.f - 15.f + randomX;
-            float y = 680.f - (i+ 1) * 60.f - 15.f+ randomY;
+            float x = (j + 1) * kYDistanceBetweenAsteroids - 15.f + randomX;
+            float y = kDefaultScreenHeight - (i+ 1) * kXDistanceBetweenAsteroids - kOffsetAsteroids+ randomY;
             
             brickSprite.position = GLKVector2Make(x, y);
-            brickSprite.rotationVelocity  = 180;
-            brickSprite.moveVelocity = GLKVector2Make(0, -90);
+            brickSprite.rotationVelocity  = kBigAsteroidRotationSpeed;
+            brickSprite.moveVelocity = GLKVector2Make(0, kAsteroidSpeed);
             [loadedAsteroids addObject:brickSprite];
         }
         
@@ -202,10 +234,10 @@
             GameSprite *brickSprite = [array objectAtIndex:j];
         
             float randomY = [Helper getYesOrNo]?[Helper randomInt]: -[Helper randomInt];
-            float y = 680.f -  60.f - 15.f+ randomY;
+            float y = kDefaultScreenHeight -  kXDistanceBetweenAsteroids - kOffsetAsteroids+ randomY;
             
             brickSprite.position = GLKVector2Make(brickSprite.position.x, y);
-            brickSprite.rotationVelocity  = 360;
+            brickSprite.rotationVelocity  = kBigAsteroidAfterCrashRotationSpeed;
             [loadedAsteroids addObject:brickSprite];
         }
     
@@ -218,12 +250,12 @@
 -(void)createSmallsAsteroidsFromAsteroid:(GameSprite*)asteroid counOfsmalAsteroids:(int)count{
     
     for (int i =0; i< count; i++) {
-        GameSprite*smallAsteroid = [[GameSprite alloc] initWithImage:[UIImage imageNamed:@"ASTEROID"] effect:self.effect];
+        GameSprite*smallAsteroid = [[GameSprite alloc] initWithImage:[UIImage imageNamed:smallAsteroidImage] effect:self.effect];
         smallAsteroid.position = asteroid.position;
-        smallAsteroid.rotationVelocity = 180.f;
-        float angle = i%2?-15:15;
+        smallAsteroid.rotationVelocity = kSmallAsteroidRotationSpeed;
+        float angle = i%2?-kSmallAsteroidAngle:kSmallAsteroidAngle;
 
-        smallAsteroid.moveVelocity = GLKVector2Make(angle, -90);
+        smallAsteroid.moveVelocity = GLKVector2Make(angle, kSmallAsteroidSpeed);
         
         [self.smallAsteroids addObject:smallAsteroid];
     }
@@ -232,10 +264,10 @@
 
 -(void)spaceShipFire{
     
-    GameSprite*fireRocket = [[GameSprite alloc] initWithImage:[UIImage imageNamed:@"fire-roket"] effect:self.effect];
-    fireRocket.position = GLKVector2Make(self.starShip.position.x, 80);
+    GameSprite*fireRocket = [[GameSprite alloc] initWithImage:[UIImage imageNamed:rocketImage] effect:self.effect];
+    fireRocket.position = GLKVector2Make(self.starShip.position.x, rocketLaunchYPositon);
     fireRocket.rotation = 0;
-    fireRocket.moveVelocity = GLKVector2Make(0,940);
+    fireRocket.moveVelocity = GLKVector2Make(0,kLaunchRocketSpeed);
     [self.fireRockets addObject:fireRocket];
     
 }

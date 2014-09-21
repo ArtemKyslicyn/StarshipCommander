@@ -30,6 +30,8 @@ typedef NS_ENUM(NSInteger, GameState) {
 
 @property (strong, nonatomic) GameSprite * background;
 
+@property (strong, nonatomic) GameSprite * gameOver;
+
 @property (assign) GameState gameState;
 @property (assign) BOOL isGameRunning;
 

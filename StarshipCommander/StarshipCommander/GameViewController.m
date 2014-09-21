@@ -111,6 +111,7 @@ enum
 - (void)update{
     
     [self.gameManager.background update:self.timeSinceLastUpdate];
+    [self.gameManager.gameOver update:self.timeSinceLastUpdate];
     [self.gameManager operationsToNotUsedObjectsInBouds:  [[UIScreen mainScreen] bounds]];
     [self.gameManager processFireRocketAndAsteroidCollision];
     [self.gameManager asteroidWithSpaceShipCollision];
@@ -150,6 +151,10 @@ enum
     
     for (GameSprite *fireRocket in self.gameManager.fireRockets){
         [fireRocket render];
+    }
+    
+    if (!self.gameManager.isGameRunning&&self.gameManager.gameState == GameStateLose) {
+        [self.gameManager.gameOver render];
     }
 }
 
